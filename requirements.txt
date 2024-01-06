@@ -1,0 +1,8 @@
+easyocr==1.7.1
+opencv-python==4.9.0.80
+# openvino==2023.2.0
+# fastapi==0.104.1
+python-multipart==0.0.6
+uvicorn==0.24.0.post1
+Django==4.2.7
+black

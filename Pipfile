@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+easyocr = "==1.7.1"
+opencv-python = "==4.9.0.80"
+python-multipart = "==0.0.6"
+uvicorn = "==0.24.0.post1"
+django = "==4.2.7"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
