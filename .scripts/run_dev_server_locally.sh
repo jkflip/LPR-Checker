@@ -11,10 +11,7 @@ echo "Running development Django server locally..."
 project_name=lpr_checker_project
 
 ## Edit app name here
-# app_name=myapp
-# app_name=demoproject
-# app_name=models_tut_app
-# app_name=littelemon_demo
+app_name=easy_ocr_app
 app_name=lpr_checker_app
 
 ## Edit workdir here
@@ -31,7 +28,7 @@ Directory Settings:
 EOF
 
 echo "[1] --- Activating virtual environment..."
-source $SCRIPT_DIR/../venv/bin/activate
+source $SCRIPT_DIR/../.venv/bin/activate
 
 # echo "Starting django app..."
 # python3 manage.py startapp $app_name
