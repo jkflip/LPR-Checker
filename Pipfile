@@ -9,6 +9,8 @@ opencv-python = "==4.9.0.80"
 python-multipart = "==0.0.6"
 uvicorn = "==0.24.0.post1"
 django = "==4.2.7"
+black = "*"
+pylint-django = "==2.5.5"
 
 [dev-packages]
 
