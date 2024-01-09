@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Car</title>
+</head>
+<body>
+    <h1>Enter owner name or license plate</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name.label_tag }} {{ form.name }}
+        {{ form.license_plate.label_tag }} {{ form.license_plate }}
+        <button type="submit">Submit</button>
+    <br>*Case sensitive</br>
+    </form>
+
+    {% if car %}
+    <h2>Car Info:</h2>
+    <table>
+        <tr>
+            <th>Car Model</th>
+            <th>License Plate</th>
+            <th>Owner Name</th>
+            <th>Phone number</th>
+            <!-- Add other fields as needed -->
+        </tr>
+        <tr>
+            <td>{{ car.owner.name }}</td>
+            <td>{{ car.license_plate }}</td>
+            <td>{{ car.car_model }}</td>
+            <td>{{ car.owner.phone_number }}</td>
+            <!-- Add other fields as needed -->
+        </tr>
+    </table>
+{% elif form.is_bound %}
+    <p>No car found with the given name or license plate.</p>
+{% endif %}
+</body>
+</html>
