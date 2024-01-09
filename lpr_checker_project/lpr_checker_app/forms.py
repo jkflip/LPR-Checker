@@ -14,3 +14,7 @@ class CarForm(forms.ModelForm):
         model = models.Car
         fields = ["license_plate", "car_model"]
 
+
+class CarSearchForm(forms.Form):
+    name = forms.CharField(required=False)
+    license_plate = forms.CharField(required=False)

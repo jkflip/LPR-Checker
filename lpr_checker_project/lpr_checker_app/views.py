@@ -30,3 +30,20 @@ def car_and_owner_form_view(request):
     )
 
 
+def car_search_view(request):
+    """
+    Method to handle getting car information from the database.
+    """
+    car = None
+    form = forms.CarSearchForm(request.POST or None)
+    if form.is_valid():
+        name = form.cleaned_data.get("name")
+        license_plate = form.cleaned_data.get("license_plate")
+        if name:
+            owner = models.Owner.objects.filter(name=name).first()
+            if owner:
+                car = models.Car.objects.filter(owner=owner).first()
+        elif license_plate:
+            car = models.Car.objects.filter(license_plate=license_plate).first()
+    return render(request, "car_search_form.html", {"form": form, "car": car})
+
