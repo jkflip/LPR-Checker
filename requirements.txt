@@ -5,4 +5,5 @@ opencv-python==4.9.0.80
 python-multipart==0.0.6
 uvicorn==0.24.0.post1
 Django==4.2.7
-black
+black==23.12.1
+pylint-django==2.5.5

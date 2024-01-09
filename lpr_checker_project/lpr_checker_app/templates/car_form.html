@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Registration Form</title>
+</head>
+<body>
+    <h1>Register details here</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ owner_form.as_p }}
+        {{ car_form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

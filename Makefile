@@ -1,4 +1,4 @@
-start-setup:
+install:
 	.scripts/setup_venv.sh
 
 start-server:
@@ -8,13 +8,14 @@ write-format:
 	black .
 
 show-migrations:
-	python3 demoproject/manage.py showmigrations
+	python3 lpr_checker_project/manage.py showmigrations
 
 makemigrations:
-	python3 demoproject/manage.py makemigrations
+	python3 lpr_checker_project/manage.py makemigrations
 
 migrate:
-	python3 demoproject/manage.py migrate
+	python3 lpr_checker_project/manage.py migrate
 
 shell:
-	python3 demoproject/manage.py shell
+	python3 lpr_checker_project/manage.py shell
+

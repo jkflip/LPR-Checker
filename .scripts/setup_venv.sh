@@ -4,12 +4,11 @@ set -e
 
 # Check for virtual env
 if [ -d ".venv" ]; then
-  echo "Virtual environment already exists. Run 'source .venv/bin/activate' to activate."
-  exit 1
+  echo "Virtual environment already exists."
+else
+  # Create virtual environment
+  python3 -m venv .venv
 fi
-
-# Create virtual environment
-python3 -m venv .venv
 
 # Activate virtual environment
 source .venv/bin/activate
