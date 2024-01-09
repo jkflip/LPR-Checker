@@ -4,8 +4,8 @@ from . import forms
 from . import models
 
 
-def hello_world(request):
-    return HttpResponse("Hello, World!")
+def status(request):
+    return HttpResponse("Server is online")
 
 
 #! Feature request: What if user can register multiple cars in one go?
@@ -46,4 +46,3 @@ def car_search_view(request):
         elif license_plate:
             car = models.Car.objects.filter(license_plate=license_plate).first()
     return render(request, "car_search_form.html", {"form": form, "car": car})
-
