@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Predict</title>
+  </head>
+  <body>
+    <h1>Upload an image for prediction</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Predict</button>
+    </form>
+    {% if result %}
+      <h2>Prediction result:</h2>
+      <ul>
+        {% for item in result %}
+          <li>Coordinates: {{ item.bbox }}, Text: {{ item.license_plate }}, Confidence: {{ item.confidence }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </body>
+</html>

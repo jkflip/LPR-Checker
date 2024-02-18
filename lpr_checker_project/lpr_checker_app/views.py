@@ -3,9 +3,43 @@ from django.http import HttpResponse, JsonResponse
 from . import forms
 from . import models
 
+# from lpr_model_app.views import predict
+
 
 def status(request):
     return HttpResponse("Server is online")
+
+
+# def image_file_upload_view(request):
+#     """
+#     Method to handle uploading an image file to the server.
+#     """
+#     if request.method == "POST":
+#         form = forms.ImageFileUploadForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             image_file = form.cleaned_data.get("image_file")
+#             image_file_name = form.cleaned_data.get("image_file_name")
+#             image_file_path = form.cleaned_data.get("image_file_path")
+#             image_file_size = form.cleaned_data.get("image_file_size")
+#             image_file_type = form.cleaned_data.get("image_file_type")
+#             image_file_url = form.cleaned_data.get("image_file_url")
+#             image_file.save()
+#             return HttpResponse("Image upload success")
+#     return render(request, "image_file_upload_form.html", {"form": forms.ImageFileUploadForm()})
+
+
+def image_file_upload_view(request):
+    """
+    Method to handle saving car information to the database.
+    """
+    if request.method == "POST":
+        form = forms.ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Image upload success")
+    else:
+        form = forms.ImageUploadForm()
+    return render(request, "car_form.html", {"form": form})
 
 
 #! Feature request: What if user can register multiple cars in one go?

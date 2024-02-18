@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "lpr_checker_app",
+    "lpr_model_app",
 ]
 
 MIDDLEWARE = [

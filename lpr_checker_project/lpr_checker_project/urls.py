@@ -20,4 +20,5 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("lpr_checker_app.urls")),
+    path("", include("lpr_model_app.urls")),
 ]
